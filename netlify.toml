@@ -1,0 +1,18 @@
+[dev]
+    command = "npm run dev"
+    publish = "dist"
+    port = 8080
+
+[build]
+    command = "npm run build"
+    publish = "dist"
+
+[functions]
+    directory = "functions"
+    node_bundler = "esbuild"
+    included_files=["data.json"]
+
+[[redirects]]
+  from = "/data"
+  to = "/.netlify/functions/getData"
+  status = 200
