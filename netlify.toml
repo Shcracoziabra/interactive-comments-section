@@ -14,5 +14,5 @@
 
 [[redirects]]
   from = "/data"
-  to = "/.netlify/functions/getData"
+  to = "/.netlify/functions/data"
   status = 200
