@@ -16,7 +16,7 @@ function App() {
       if (localData) {
         dispatch({type: 'data_initiated', payload: JSON.parse(localData)})
       } else {
-        fetch('/data').then(res => res.json()).then(res=> {
+        fetch('/.netlify/functions/getData').then(res => res.json()).then(res=> {
           dispatch({type: 'data_initiated', payload: res});
           localStorage.setItem('commentSectionData', JSON.stringify(res));
         });
