@@ -13,7 +13,7 @@ export default function reducer(data, action) {
                             ...action.payload, 
                             id: data.comments.commentsnextid
                         }
-                    ]
+                    ].slice(0,50)
                 }
             }
         case 'reply_added':
@@ -32,7 +32,7 @@ export default function reducer(data, action) {
                                         ...action.payload, 
                                         id: comment.repliesnextid
                                     }
-                                ]
+                                ].slice(0,20)
                             }
                         }
                         return comment;
