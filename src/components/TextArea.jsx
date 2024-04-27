@@ -39,6 +39,7 @@ export default function TextArea({placeholder='', addressant, className, content
                 }  
             }
             className={className}
+            maxLength={300}
         >   
         </textarea>
     )
