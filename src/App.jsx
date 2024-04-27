@@ -38,12 +38,6 @@ function App() {
   return (
     <AppContext.Provider value={data}>
       <AppDispatchContext.Provider value={dispatch}>
-        {/* {!data && <button className='btn' onClick={
-          () => fetch('/data').then(res => res.json()).then(res=> {
-            dispatch({type: 'data_initiated', payload: res});
-            localStorage.setItem('commentSectionData', JSON.stringify(res));
-          })
-        }>Click to load data</button>} */}
         {data && comments}
         { data && <MessageForm
           key="f-1"

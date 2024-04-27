@@ -22,11 +22,12 @@ body {
     font-size: 1rem;
     overflow-x: hidden;
     padding: 20px;
+    min-width: 375px;
 }
 
 main {
     margin: 0 auto;
-    width: clamp(468px, 100%, 730px);
+    width: clamp(350px, 100%, 730px);
     display: grid;
     row-gap: var(--size-4);
 }
