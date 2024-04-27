@@ -185,6 +185,7 @@ main {
     }
     &-content {
         white-space-collapse: preserve;
+        word-break: break-word;
         grid-column: 2 / 4;
         width: 100%;
         color: var(--gray-7);
