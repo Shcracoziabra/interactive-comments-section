@@ -7,23 +7,23 @@ import MessageForm from './components/MessageForm';
 
 function App() {
   const [data, dispatch] = useReducer(reducer, null);
-  const effectRan = useRef(false);
+  // const effectRan = useRef(false);
 
-  useEffect(() => {
-    if (effectRan.current) {
+  // useEffect(() => {
+  //   if (effectRan.current) {
       
-      const localData = localStorage.getItem('commentSectionData');
-      if (localData) {
-        dispatch({type: 'data_initiated', payload: JSON.parse(localData)})
-      } else {
-        fetch('/data').then(res => res.json()).then(res=> {
-          dispatch({type: 'data_initiated', payload: res});
-          localStorage.setItem('commentSectionData', JSON.stringify(res));
-        });
-      }
-    }
-    return () => effectRan.current = true
-  }, []);
+  //     const localData = localStorage.getItem('commentSectionData');
+  //     if (localData) {
+  //       dispatch({type: 'data_initiated', payload: JSON.parse(localData)})
+  //     } else {
+  //       fetch('/data').then(res => res.json()).then(res=> {
+  //         dispatch({type: 'data_initiated', payload: res});
+  //         localStorage.setItem('commentSectionData', JSON.stringify(res));
+  //       });
+  //     }
+  //   }
+  //   return () => effectRan.current = true
+  // }, []);
 
   useEffect(()=> {
     if (data) {
@@ -38,6 +38,12 @@ function App() {
   return (
     <AppContext.Provider value={data}>
       <AppDispatchContext.Provider value={dispatch}>
+        {!data && <button className='btn' onClick={
+          () => fetch('/data').then(res => res.json()).then(res=> {
+            dispatch({type: 'data_initiated', payload: res});
+            localStorage.setItem('commentSectionData', JSON.stringify(res));
+          })
+        }>Click to load data</button>}
         {data && comments}
         { data && <MessageForm
           key="f-1"
@@ -51,6 +57,6 @@ function App() {
 
 export default App;
 
-// solve user avatar issues
-// check accessibility
-// create portal in a special place of the node
+// solve user avatar issues +
+// check accessibility +
+// create portal in a special place of the node +
