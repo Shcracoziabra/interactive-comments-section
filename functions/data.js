@@ -1,7 +1,7 @@
 import { resolve } from "path";
 import { readFile } from "fs/promises";
 
-export const handler = async (_event, _context) => {
+export const handler = async () => {
     const filePath = resolve("data.json");
     const data = await readFile(filePath, 'utf8');
   return {

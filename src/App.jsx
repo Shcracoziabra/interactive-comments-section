@@ -7,10 +7,10 @@ import MessageForm from './components/MessageForm';
 
 function App() {
   const [data, dispatch] = useReducer(reducer, null);
-  const effectRan = useRef(false);
+  const effectNoRan = useRef(true);
 
   useEffect(() => {
-    if (effectRan.current) {
+    if (effectNoRan.current) {
       
       const localData = localStorage.getItem('commentSectionData');
       if (localData) {
@@ -22,7 +22,7 @@ function App() {
         });
       }
     }
-    return () => effectRan.current = true
+    return () => effectNoRan.current = false
   }, []);
 
   useEffect(()=> {
@@ -50,7 +50,3 @@ function App() {
 }
 
 export default App;
-
-// solve user avatar issues
-// check accessibility
-// create portal in a special place of the node

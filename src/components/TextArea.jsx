@@ -19,7 +19,7 @@ export default function TextArea({placeholder='', addressant, className, content
         myRef.current.selectionStart = (replyWord + content).length;
         myRef.current.selectionEnd = (replyWord + content).length;
         setInnerHeight(content);
-    }, []);
+    }, [replyWord, content, setInnerHeight]);
 
     const textAreaLabel = content.trim().length === 0 ? 'create new message' : 'update message';
 
@@ -39,6 +39,7 @@ export default function TextArea({placeholder='', addressant, className, content
                 }  
             }
             className={className}
+            maxLength={300}
         >   
         </textarea>
     )
