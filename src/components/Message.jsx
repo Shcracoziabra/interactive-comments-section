@@ -122,8 +122,8 @@ export default function Message({ isReply, postedByCurrentUser, parentId, data }
         :   <>{paragraph}</>
 
     const userName = isReply 
-        ?   <h3 className={userNameClass}>{user.username}</h3> 
-        :   <h2 className={userNameClass}>{user.username}</h2>;
+        ?   <h4 className={userNameClass}>{user.username}</h4> 
+        :   <h3 className={userNameClass}>{user.username}</h3>;
 
     return (
         <>

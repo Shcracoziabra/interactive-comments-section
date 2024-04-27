@@ -24,6 +24,7 @@ export default function Comment({ comment }){
         <section 
             className="wrapper wrapper_comment"
         >
+            <h2 className='visually-hidden'>{comment.user.username} comment</h2>
             <Message 
                 isReply={false}
                 key={'com-'+comment.id}
@@ -32,7 +33,10 @@ export default function Comment({ comment }){
             />
             {
                 replies.length > 0 
-                    ? <section className="wrapper wrapper_replies">{replies}</section> 
+                    ?   <section className="wrapper wrapper_replies">
+                            <h3 className='visually-hidden'>{comment.user.username} replies</h3>
+                            {replies}
+                        </section> 
                     : null
             }
         </section>

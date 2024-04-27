@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 
 export default function Score({onPlusClick, onMinusClick, score}){
     return (
-        <div className="message-score" aria-label='comment votes'>
+        <div className="message-score">
             <button 
                 onClick={onPlusClick} 
                 className="message-score__control" 

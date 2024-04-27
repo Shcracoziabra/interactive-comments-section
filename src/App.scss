@@ -470,3 +470,11 @@ main {
         color: hsl(228, 45%, 44%); 
     }
 }
+
+.visually-hidden {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}

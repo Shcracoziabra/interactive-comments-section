@@ -38,6 +38,7 @@ function App() {
   return (
     <AppContext.Provider value={data}>
       <AppDispatchContext.Provider value={dispatch}>
+        <h1 className="visually-hidden">Mock comment section</h1>
         {data && comments}
         { data && <MessageForm
           key="f-1"
